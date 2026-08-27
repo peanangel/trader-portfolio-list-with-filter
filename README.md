@@ -1,4 +1,9 @@
+
+แนวคิดในการออกแบบ
+แยกแต่ละส่วนออกจากกันเป็นอิสระ : หน้ารายการ Trader และหน้าต่างตัวกรอง ถูกออกแบบให้ทำงานแยกจากกัน 100% โดยคุยกันผ่านบอร์ดกลาง (Riverpod) แทนการส่งข้อมูลข้ามไปข้ามมาทาง Constructor ทำให้ในอนาคตถ้าอยากยกตัวกรองนี้ไปใช้กับหน้าอื่น ก็หยิบไปใช้ได้ทันที
+
 โครงสร้าง provider ที่ออกแบบ (มีกี่ตัว ทำหน้าที่อะไร)
+ใช้ provider 6 ตัว
 * allTradersProvider - โหลด mock trader ผ่าน TraderRepository
 * availableTagsProvider - รายการ tag ทั้งหมดที่เลือกได้ใน Filter Bottom Sheet
 * filterTagsProvider - ค่า filter ที่ apply แล้วจริง — ตัวนี้คือ global keep-alive ใช้กรอง trader list 
@@ -12,3 +17,4 @@
 * ปิดหน้าต่างแล้วค่าไม่หาย (Keep-Alive)
 * แยก Business Logic ออกจาก UI
 "# trader-portfolio-list-with-filter" 
+้
